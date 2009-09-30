@@ -1,0 +1,13 @@
+<div class="search-header" i18n:domain="dolmen">
+  <h1 i18n:translate="">Search</h1>
+  <h3 tal:content="view/label" />
+</div>
+<dl class="search-results content-listing" tal:condition="view/results">
+  <dt tal:repeat="result view/results">
+    <a tal:attributes="href result/@@absolute_url;
+		       title result/title"> 
+      <tal:icon  content="structure result/@@contenttype_icon|nothing" />
+      <span tal:content="result/title" />
+    </a>
+  </dt>
+</dl>
