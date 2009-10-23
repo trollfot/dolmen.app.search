@@ -5,9 +5,9 @@
 <dl class="search-results content-listing" tal:condition="view/results">
   <dt tal:repeat="result view/results">
     <a tal:attributes="href result/@@absolute_url;
-		       title result/title"> 
+		       title result/title|result/__name__"> 
       <tal:icon  content="structure result/@@contenttype_icon|nothing" />
-      <span tal:content="result/title" />
+      <span tal:content="result/title|result/__name__" />
     </a>
   </dt>
 </dl>
