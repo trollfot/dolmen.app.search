@@ -10,7 +10,7 @@ from dolmen.app.search import ICatalogSearcher
 class Search(grok.Viewlet):
     grok.context(Interface)
     grok.name('search.viewlet')
-    grok.viewletmanager(master.DolmenTop)
+    grok.viewletmanager(master.Top)
     grok.order(10)
 
     def update(self):
