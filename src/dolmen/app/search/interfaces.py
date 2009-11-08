@@ -1,17 +1,15 @@
 # -*- coding: utf-8 -*-
 
 from zope.schema import Object
-from zope.interface import Interface
+from zope.interface import Interface, Attribute, moduleProvides
 from zope.app.catalog.interfaces import ICatalog
 
 
 class ISearcher(Interface):
     """Defines a component designed to seek and retrieve an element.
     """
-    def search(term, exact=False, permission="dolmen.content.View"):
-        """The main method. It will search the catalog for elements
-        matching the term. The search can be exact and the searcher
-        can check the validity of a given permission.
+    def search(term, *args, **kwargs):
+        """Searches elements matching the given term.
         """
 
 
@@ -23,3 +21,20 @@ class ICatalogSearcher(ISearcher):
         schema = ICatalog,
         required = True
         )
+
+    def search(term, index, permission="zope.View"):
+        """Searches a catalog for elements matching the term.
+        The searcher can check a given permission on the objects
+        of the result set.
+        """
+
+
+class ISearchAPI(Interface):
+    """The public Search API.
+    """
+    ISearcher = Attribute("A component dedicated to search")
+    ICatalogSearcher = Attribute("A specialized ISearcher querying a catalog")
+
+
+moduleProvides(ISearchAPI)
+__all__ = list(ISearchAPI)
