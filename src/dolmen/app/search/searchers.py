@@ -9,8 +9,8 @@ from dolmen.app.search import PermissionAwareResultSet
 
 from zope.component import getUtility
 from zope.interface import Interface, Attribute, moduleProvides
-from zope.app.intid.interfaces import IIntIds
-from zope.app.catalog.interfaces import ICatalog
+from zope.intid.interfaces import IIntIds
+from zope.catalog.interfaces import ICatalog
 
 
 class SiteCatalogSearcher(grok.GlobalUtility):
