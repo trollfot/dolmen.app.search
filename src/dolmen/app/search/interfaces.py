@@ -2,7 +2,7 @@
 
 from zope.schema import Object
 from zope.interface import Interface, Attribute, moduleProvides
-from zope.app.catalog.interfaces import ICatalog
+from zope.catalog.interfaces import ICatalog
 
 
 class ISearcher(Interface):

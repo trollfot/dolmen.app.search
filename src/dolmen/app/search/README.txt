@@ -53,9 +53,8 @@ We create a Grok application, that will be out site manager::
   ...   """A dark alley.
   ...   """
 
- >>> grok.testing.grok_component('application', Backstreet)
+  >>> grok.testing.grok_component('application', Backstreet)
   True
-
 
 We define an index that will be the base for our search::
 
@@ -79,15 +78,15 @@ Now we persist our application and set it as the default site::
 The Grok application has created the catalog::
 
   >>> from zope.component import getUtility
-  >>> from zope.app.catalog.interfaces import ICatalog
+  >>> from zope.catalog.interfaces import ICatalog
   >>> catalog = getUtility(ICatalog)
   >>> catalog
-  <zope.app.catalog.catalog.Catalog object at ...>
+  <zope.catalog.catalog.Catalog object at ...>
 
 Our index is there::
 
   >>> catalog['searchabletext']
-  <zope.app.catalog.text.TextIndex object at ...>
+  <zope.catalog.text.TextIndex object at ...>
   >>> catalog['searchabletext'].documentCount()
   0
 
