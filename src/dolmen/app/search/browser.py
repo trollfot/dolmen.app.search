@@ -12,6 +12,7 @@ class Search(grok.Viewlet):
     grok.name('search.viewlet')
     grok.viewletmanager(master.Top)
     grok.order(10)
+    grok.require("dolmen.content.View")
 
     def update(self):
         self.term = self.request.form.get('search_term', u'')

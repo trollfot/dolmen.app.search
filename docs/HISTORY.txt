@@ -6,6 +6,8 @@ Changelog
 
 - Declare all dependencies and some cleanup.
 
+- Require dolmen.content.View permission for Search viewlet.
+
 
 0.2.1 (2009-12-01)
 ------------------
