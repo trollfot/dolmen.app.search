@@ -43,7 +43,7 @@ class ISearchers(Interface):
     """
     SiteCatalogSearcher = Attribute(
         "ICatalogSearcher querying the application catalog. It verifies "
-        "that the current user has the view right (`dolmen.content.View`).")
+        "that the current user has the view right (`zope.View`).")
 
 
 __all__ = list(ISearchers)
