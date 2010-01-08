@@ -3,12 +3,11 @@
 import grok
 from martian import util
 
-from dolmen.app import security
 from dolmen.app.search import ICatalogSearcher
 from dolmen.app.search import PermissionAwareResultSet
 
 from zope.component import getUtility
-from zope.interface import Interface, Attribute, moduleProvides
+from zope.interface import Interface, Attribute
 from zope.intid.interfaces import IIntIds
 from zope.catalog.interfaces import ICatalog
 

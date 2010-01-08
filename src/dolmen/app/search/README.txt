@@ -68,12 +68,12 @@ We define an index that will be the base for our search::
 
 Now we persist our application and set it as the default site::
 
-  >>> from zope.app.component import hooks
+  >>> from zope.site.hooks import setSite
   >>> app = Backstreet()
   >>> root = getRootFolder()
   >>> root['berner_street'] = app
  
-  >>> hooks.setSite(app)
+  >>> setSite(app)
 
 The Grok application has created the catalog::
 

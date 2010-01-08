@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 from os.path import join
 
 name = 'dolmen.app.search'
-version = '0.2.1'
+version = '0.2.2dev'
 readme = open(join('src', 'dolmen', 'app', 'search', 'README.txt')).read()
 history = open(join('docs', 'HISTORY.txt')).read()
 
@@ -10,15 +10,22 @@ install_requires = [
     'dolmen.app.layout',
     'dolmen.app.security',
     'grok',
+    'martian',
     'setuptools',
+    'zope.catalog',
     'zope.component',
     'zope.interface',
+    'zope.intid',
+    'zope.schema',
+    'zope.security',
     ]
 
 tests_require = install_requires + [
-    'zope.testing',
     'zope.app.testing',
-    'zope.app.zcmlfiles',
+    'zope.index',
+    'zope.publisher',
+    'zope.site',
+    'zope.testing',
     ]
 
 setup(name = name,
