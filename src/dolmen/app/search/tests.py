@@ -13,18 +13,22 @@ FunctionalLayer = functional.ZCMLLayer(
     ftesting_zcml, __name__, 'FunctionalLayer', allow_teardown=True
     )
 
+
 def setUp(test):
     module.setUp(test, 'dolmen.app.search.ftests')
     participation = Participation(Principal('zope.mgr'))
     newInteraction(participation)
 
+
 def tearDown(test):
     module.tearDown(test)
     endInteraction()
 
+
 def interfaceDescription(interface):
     for name, attr in interface.namesAndDescriptions():
         print "%s: %s" % (name, attr.getDoc())
+
 
 def test_suite():
     suite = unittest.TestSuite()

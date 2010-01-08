@@ -8,10 +8,10 @@
   <dl class="search-results content-listing" tal:condition="view/results">
     <dt tal:repeat="result view/results">
       <a tal:define="title result/title|result/__name__"
-	 tal:attributes="href result/@@absolute_url;
-			 title title"> 
-	<tal:icon  content="structure result/@@contenttype_icon|nothing" />
-	<span tal:content="title" />
+         tal:attributes="href result/@@absolute_url;
+                         title title"> 
+        <tal:icon  content="structure result/@@contenttype_icon|nothing" />
+        <span tal:content="title" />
       </a>
     </dt>
   </dl>
