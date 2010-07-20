@@ -1,5 +1,8 @@
 # -*- coding: utf-8 -*-
 
+from zope.i18nmessageid import MessageFactory
+MF = MessageFactory('dolmen.app.search')
+
 from dolmen.app.search.sets import PermissionAwareResultSet
 
 from dolmen.app.search.interfaces import *

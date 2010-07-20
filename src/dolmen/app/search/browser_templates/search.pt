@@ -1,6 +1,6 @@
 <form id="searchbox"
       method="post"
-      i18n:domain="dolmen"
+      i18n:domain="dolmen.app.search"
       tal:attributes="action string:${view/application_url}/search.result">
   <input type="text"
          autocomplete="off"
@@ -11,6 +11,8 @@
   <input type="submit"
          name="search_button"
          id="search-button"
-         i18n:attributes="value search"
-         value="search" />
+         title="Search"
+         alt="Search"
+         i18n:attributes="value label_do_search; title label_do_search; alt label_do_search"
+         value="Search" />
 </form>

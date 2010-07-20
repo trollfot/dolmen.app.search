@@ -1,8 +1,8 @@
 <div xmlns:tal="http://xml.zope.org/namespaces/tal"
      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
      class="search-result">
-  <div class="search-header" i18n:domain="dolmen">
-    <h1 i18n:translate="">Search</h1>
+  <div class="search-header" i18n:domain="dolmen.app.search">
+    <h1 i18n:translate="label_search">Search</h1>
     <h3 tal:content="view/label" />
   </div>
   <dl class="search-results content-listing" tal:condition="view/results">

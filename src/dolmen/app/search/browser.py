@@ -5,7 +5,7 @@ from zope.interface import Interface
 from zope.component import getUtility
 from dolmen.app.layout import Page, master
 from dolmen.app.search import ICatalogSearcher
-
+from dolmen.app.search import MF as _
 
 class Search(grok.Viewlet):
     grok.context(Interface)
@@ -30,4 +30,8 @@ class Results(Page):
             self.results = searcher.search(term + '*')
         else:
             self.results = []
-        self.label = u"Found %i results for %s" % (len(self.results), term)
+        mapping = {"number": len(self.results),
+                   "searchterm": term}
+        self.label = _("label_results_found",
+                       mapping=mapping, 
+                       default=u"Found %(number)s results for %(searchterm)s" % mapping)
