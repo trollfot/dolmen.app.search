@@ -9,11 +9,13 @@ history = open(join('docs', 'HISTORY.txt')).read()
 install_requires = [
     'dolmen.app.layout',
     'dolmen.app.security',
-    'grok',
+    'grokcore.security',
+    'grokcore.viewlet',
     'martian',
     'setuptools',
     'zope.catalog',
     'zope.component',
+    'zope.i18n',
     'zope.i18nmessageid',
     'zope.interface',
     'zope.intid',
@@ -22,12 +24,11 @@ install_requires = [
     ]
 
 tests_require = [
+    'grok',
+    'zope.app.wsgi',
     'zope.index',
-    'zope.i18n',
     'zope.publisher',
     'zope.site',
-    'zope.testing',
-    'zope.app.wsgi',
     ]
 
 setup(name = name,
@@ -49,10 +50,8 @@ setup(name = name,
       install_requires = install_requires,
       extras_require = {'test': tests_require},
       classifiers = [
-        'Development Status :: 4 - Beta',
         'Environment :: Web Environment',
         'Framework :: Zope3',
-        'Intended Audience :: Other Audience',
         'License :: OSI Approved :: GNU General Public License (GPL)',
         'Operating System :: OS Independent',
         'Programming Language :: Python',

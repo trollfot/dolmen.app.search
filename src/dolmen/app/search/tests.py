@@ -1,11 +1,8 @@
 # -*- coding: utf-8 -*-
 
-import os.path
-import unittest
-
 import doctest
+import unittest
 import dolmen.app.search
-from zope.testing import module
 from zope.app.wsgi.testlayer import BrowserLayer
 from zope.security.testing import Principal, Participation
 from zope.security.management import newInteraction, endInteraction

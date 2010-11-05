@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 
-import grok
 from martian import util
 
 from dolmen.app.search import ICatalogSearcher
 from dolmen.app.search import PermissionAwareResultSet
+import grokcore.security as grok
 
 from zope.component import getUtility
 from zope.interface import Interface, Attribute
