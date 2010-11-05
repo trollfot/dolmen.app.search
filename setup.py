@@ -21,12 +21,13 @@ install_requires = [
     'zope.security',
     ]
 
-tests_require = install_requires + [
-    'zope.app.testing',
+tests_require = [
     'zope.index',
+    'zope.i18n',
     'zope.publisher',
     'zope.site',
     'zope.testing',
+    'zope.app.wsgi',
     ]
 
 setup(name = name,

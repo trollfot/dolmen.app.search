@@ -3,25 +3,20 @@
 import os.path
 import unittest
 
+import doctest
+import dolmen.app.search
 from zope.testing import module
-from zope.app.testing import functional
+from zope.app.wsgi.testlayer import BrowserLayer
 from zope.security.testing import Principal, Participation
 from zope.security.management import newInteraction, endInteraction
 
-ftesting_zcml = os.path.join(os.path.dirname(__file__), 'ftesting.zcml')
-FunctionalLayer = functional.ZCMLLayer(
-    ftesting_zcml, __name__, 'FunctionalLayer', allow_teardown=True
-    )
-
 
 def setUp(test):
-    module.setUp(test, 'dolmen.app.search.ftests')
     participation = Participation(Principal('zope.mgr'))
     newInteraction(participation)
 
 
 def tearDown(test):
-    module.tearDown(test)
     endInteraction()
 
 
@@ -30,12 +25,17 @@ def interfaceDescription(interface):
         print "%s: %s" % (name, attr.getDoc())
 
 
+layer = BrowserLayer(dolmen.app.search)
 def test_suite():
     suite = unittest.TestSuite()
-    readme = functional.FunctionalDocFileSuite(
+    readme = doctest.DocFileSuite(
         'README.txt', setUp=setUp, tearDown=tearDown,
-        globs={'interfaceDescription': interfaceDescription}
+        optionflags=(doctest.NORMALIZE_WHITESPACE|doctest.ELLIPSIS),
+        globs={
+            '__name__': 'dolmen.app.search.tests',
+            'interfaceDescription': interfaceDescription,
+            'getRootFolder': layer.getRootFolder}
         )
-    readme.layer = FunctionalLayer
+    readme.layer = layer
     suite.addTest(readme)
     return suite

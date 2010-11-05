@@ -130,7 +130,7 @@ name of the index. By default, it uses the `searchabletext` index::
   >>> result
   <dolmen.app.search.sets.PermissionAwareResultSet instance at ...>
   >>> list(result)
-  [<dolmen.app.search.ftests.Ripper object at ...>]
+  [<dolmen.app.search.tests.Ripper object at ...>]
 
 If we provide a non existing index name, an error is raised::
 
@@ -151,7 +151,7 @@ A wildcard can be given, when searching a text index::
 
   >>> result = searcher.search("Ja*")
   >>> list(result)
-  [<dolmen.app.search.ftests.Ripper object at ...>]
+  [<dolmen.app.search.tests.Ripper object at ...>]
 
 
 Permission
@@ -170,13 +170,13 @@ A `grok.Permision` class can be used instead of a string::
   >>> from dolmen.app.security import CanViewContent
   >>> result = searcher.search("knife", permission=CanViewContent)
   >>> list(result)
-  [<dolmen.app.search.ftests.Ripper object at ...>]
+  [<dolmen.app.search.tests.Ripper object at ...>]
 
 If permission is set to None, nothing is checked::
    
   >>> result = searcher.search("knife", permission=None)
   >>> list(result)
-  [<dolmen.app.search.ftests.Ripper object at ...>]
+  [<dolmen.app.search.tests.Ripper object at ...>]
 
 
 View and viewlet
@@ -224,7 +224,8 @@ We can now call, update and render the Search viewlet::
     <input type="text" autocomplete="off" name="search_term"
            id="search-widget" value="" />
     <input type="submit" name="search_button"
-           id="search-button" value="search" />
+           id="search-button" title="Search" alt="Search"
+           value="Search" />
   </form>
 
 
