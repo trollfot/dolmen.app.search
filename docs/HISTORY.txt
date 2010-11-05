@@ -1,10 +1,14 @@
 Changelog
 =========
 
-0.4 (unreleased)
+0.4 (2010-11-05)
 ----------------
 
-- Nothing changed yet.
+- The package now works for Grok 1.2.
+
+- The icon is now using the "icon" and no longer "contenttype_icon" view.
+
+- The dependencies have been reviewed and slimmed down.
 
 
 0.3.1 (2010-07-24)
